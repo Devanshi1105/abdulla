@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.serviceType"
+             xmlns:ViewModels="clr-namespace:ws01.modelView;assembly=ws01">
+    <ContentPage.BindingContext>
+        <ViewModels:MainViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <ListView x:Name="xlists" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                   <StackLayout Orientation="Horizontal"  HorizontalOptions="End" >
+                   <Label x:Name="xlbl" Text="{Binding name}" TextColor="Black"></Label>
+                   </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.myCar"  BackgroundColor="White">
+    <ContentPage.Content  Title="طالب خدمة" BackgroundColor="White">
+        <StackLayout>
+
+            <Label x:Name="xlbl" Text="{Binding color}" FontSize="Large" TextColor="Black"></Label>
+
+            <Button x:Name="chngcar" Text="تغير السيارة" TextColor="White" BackgroundColor="#ed8037"  HorizontalOptions="FillAndExpand" Clicked="Chngcar_Clicked"></Button>
+            <Button x:Name="keepgoing" Text="استمـــرار" TextColor="White" BackgroundColor="#ed8037"  HorizontalOptions="FillAndExpand" Clicked="Keepgoing_Clicked"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

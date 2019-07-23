@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.selectservice">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="menuprofile" Order="Secondary" Text="ملفي" Priority="1"/>
+        <ToolbarItem Name="menumyorder" Order="Secondary" Text="طلباتي" Priority="2"/>
+        <ToolbarItem Name="menusuggestion" Order="Secondary" Text="الشكاوي و الاقتراحات" Priority="3"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="15">
+
+            <ListView x:Name="serviceslist" ItemTapped="Serviceslist_ItemTapped_1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"  HorizontalOptions="End" >
+                                <Grid ColumnSpacing="1" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="imgic" Grid.Column="0" Source="listicone" WidthRequest="400"></Image>
+                                    <Label x:Name="xlbl" Text="{Binding name}" WidthRequest="650" TextColor="Black" HorizontalTextAlignment="End" Grid.Column="3" Grid.ColumnSpan="3"></Label>
+                                </Grid>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>

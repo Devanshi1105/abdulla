@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.offerlist">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="menuprofile" Order="Secondary" Text="ملفي" Priority="1"/>
+        <ToolbarItem Name="menumyorder" Order="Secondary" Text="طلباتي" Priority="2"/>
+        <ToolbarItem Name="menusuggestion" Order="Secondary" Text="الشكاوي و الاقتراحات" Priority="3"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+            <Label Text="لا توجد عروض حاليا" TextColor="#ED8037" FontSize="Medium" HorizontalTextAlignment="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

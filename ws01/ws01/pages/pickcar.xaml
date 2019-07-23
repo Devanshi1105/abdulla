@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.pickcar" BackgroundImage="bkpicker">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem2" Order="Secondary" Text="ملفي" Priority="1"/>
+        <ToolbarItem Name="MenuItem2" Order="Secondary" Text="طلباتي" Priority="2"/>
+        <ToolbarItem Name="MenuItem2" Order="Secondary" Text="الشكاوي و الاقتراحات" Priority="3"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        
+        <StackLayout Padding="25">
+            <Grid ColumnSpacing="0" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="wutcar" x:Name="xbrand" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Picker x:Name="pickbrand" SelectedIndexChanged="pickbrand_SelectedIndexChanged" Title="اختر الماركة"  Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding carbrandts}"
+              ItemDisplayBinding="{Binding carbrand}"
+              SelectedItem="{Binding carbrand}">
+                </Picker>
+                 <ActivityIndicator x:Name="activityIndicator" IsRunning="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="200" WidthRequest="200" Color="Orange" IsEnabled="True" />
+
+                <Picker x:Name="picktype" Title="اختر النوع"  Grid.Row="4" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding modeltype}"
+              ItemDisplayBinding="{Binding cartype}"
+              SelectedItem="{Binding cartype}">
+                </Picker>
+       <Picker x:Name="pickmodel" Title="اختر الموديل"  Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding modelyy}"
+              ItemDisplayBinding="{Binding myear}"
+              SelectedItem="{Binding myear}">
+                </Picker>
+                <Picker x:Name="pickcolor" Title="اختر اللون"  Grid.Row="6" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding carcolor}"
+              ItemDisplayBinding="{Binding color}"
+              SelectedItem="{Binding color}">
+                </Picker>
+                <Image x:Name="savebtn" Source="savebtn.png" Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_TappedAsync"  />
+                    </Image.GestureRecognizers>
+                </Image>
+                
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

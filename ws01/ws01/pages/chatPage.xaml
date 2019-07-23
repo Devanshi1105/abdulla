@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ws01.pages.chatPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="15">
+
+            <ListView x:Name="chat" ItemTapped="Chat_ItemTapped_1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"  HorizontalOptions="End" >
+                                <Grid ColumnSpacing="1" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label x:Name="msg" Text="{Binding msg}" WidthRequest="650" TextColor="Black" HorizontalTextAlignment="End" Grid.Column="1" Grid.Row="1"></Label>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtmsg" Placeholder="اكتب هنا..." WidthRequest="200"></Entry>
+                <Button x:Name="btnsend" Text="ارسال" TextColor="White" WidthRequest="100" BackgroundColor="#ed8037" Clicked="Btnsend_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

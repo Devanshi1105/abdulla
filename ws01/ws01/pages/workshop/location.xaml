@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.workshop.location">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3.33"/>
+            <RowDefinition Height="3.33"/>
+            <RowDefinition Height="3.33"/>
+        </Grid.RowDefinitions>
+        
+    </Grid>
+</ContentPage>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.workshop.placeoffer">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <Grid ColumnSpacing="0" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="price" Text="سعر الحدمة" FontSize="Large" TextColor="#ED8037" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End"></Label>
+                <Entry x:Name="enoffer" HorizontalOptions="CenterAndExpand" WidthRequest="400" MinimumWidthRequest="400" Grid.ColumnSpan="2" Grid.Row="1" HorizontalTextAlignment="End"></Entry>
+                <Label x:Name="justlbl" Text="شامل قطع الغيار" FontSize="Large" TextColor="#ED8037" Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="End"></Label>
+                
+                <Image x:Name="btnyes" Source="yesbtn.png"
+                       Grid.Row="3"  MinimumWidthRequest="80" WidthRequest="80" HorizontalOptions="End" Grid.Column="0" VerticalOptions="StartAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped_no"  />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="btnno" Source="nobtn.png"
+                       Grid.Row="3" MinimumWidthRequest="80" WidthRequest="80" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="StartAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped_yes"  />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Label x:Name="valuelbl" Text="المدة بالايام" FontSize="Large" TextColor="#ED8037" Grid.Row="4" Grid.Column="1" HorizontalTextAlignment="End"></Label>
+                <Entry x:Name="endays" HorizontalOptions="CenterAndExpand" WidthRequest="400" MinimumWidthRequest="400" Grid.ColumnSpan="2" Grid.Row="4" HorizontalTextAlignment="End"></Entry>
+
+                <Label x:Name="lbloffer" Text="العرض" FontSize="Large" TextColor="#ED8037" Grid.Row="5" Grid.Column="1" HorizontalTextAlignment="End"></Label>
+                <Entry x:Name="entheoffer" HorizontalOptions="CenterAndExpand" WidthRequest="400" MinimumWidthRequest="400" Grid.ColumnSpan="2" Grid.Row="5" HorizontalTextAlignment="End"></Entry>
+                
+
+                <Image x:Name="btnsendoffer" Source="sendoffer.png"
+                       Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" VerticalOptions="StartAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_TappedAsync"  />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="btncancel" Source="cancel.png"
+                       Grid.Row="6" Grid.RowSpan="2" Grid.Column="0" VerticalOptions="StartAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped_1Async"  />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

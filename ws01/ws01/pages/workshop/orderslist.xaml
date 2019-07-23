@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.workshop.orderslist">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="menuprofile" Order="Secondary" Text="ملفي" Priority="1"/>
+        <ToolbarItem Name="menumyorder" Order="Secondary" Text="طلباتي" Priority="2"/>
+        <ToolbarItem Name="menusuggestion" Order="Secondary" Text="الشكاوي و الاقتراحات" Priority="3"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="15">
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50" Color="Orange" IsEnabled="True" />
+            <ListView x:Name="serviceslist" ItemTapped="serviceslist_ItemTappedAsync">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"  HorizontalOptions="End" >
+                                <Grid ColumnSpacing="1" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100*"/>
+                                        <ColumnDefinition Width="70*"/>
+                                        <ColumnDefinition Width="70*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label x:Name="xlbl" Text="{Binding issue}" TextColor="Gray" HorizontalTextAlignment="End" Grid.Column="0" FontSize="Medium"></Label>
+                                    <Label x:Name="xlblcarbrand" Text="{Binding carbrand}" TextColor="Gray" HorizontalTextAlignment="End" Grid.Column="1" FontSize="Medium"></Label>
+                                    <Label x:Name="xlblservice" Text="{Binding services}" TextColor="Gray" HorizontalTextAlignment="End" Grid.Column="2" FontSize="Medium"></Label>
+                                </Grid>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

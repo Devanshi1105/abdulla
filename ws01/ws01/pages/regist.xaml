@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ws01.pages.regist" BackgroundColor="White">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="طالب خدمة" BackgroundColor="White">
+        <StackLayout>
+            <Image x:Name="banner01" Source="banUserldpi" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>
+            <StackLayout Padding="20">
+            <Label x:Name="username" Text="الاسم" HorizontalTextAlignment="End" TextColor="OrangeRed"></Label>
+            <Entry x:Name="enusername" Placeholder="الاسم" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"></Entry>
+
+            <Label x:Name="userphone" Text="الجوال" HorizontalTextAlignment="End" TextColor="OrangeRed"></Label>
+                <Entry x:Name="enuserphone" Placeholder="رقم جوالك" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" Keyboard="Telephone"></Entry>
+
+            <Label x:Name="email" Text="البريد" HorizontalTextAlignment="End" TextColor="OrangeRed"></Label>
+                <Entry x:Name="enemail" Placeholder="البريد" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" Keyboard="Email"></Entry>
+
+                <Label x:Name="pass" Text="كلمة المرور" HorizontalTextAlignment="End" TextColor="OrangeRed"></Label>
+                <Entry x:Name="enpass" Placeholder="كلمة المرور" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"></Entry>
+
+
+
+                <Image x:Name="btnGoogle" Source="registbtnldpi" MinimumHeightRequest="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped"  />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="مقدم خدمة" BackgroundColor="White">
+            <StackLayout>
+            <Image x:Name="banner02" Source="banShopldpi" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>
+            <ScrollView>
+                <StackLayout Padding="20">
+                    <Label x:Name="rname" Text="اسم المسؤول" HorizontalTextAlignment="End" TextColor="OrangeRed"></Label>
+                    <Entry x:Name="enrespname" Placeholder="الاسم" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"></Entry>
+
+                    <Label x:Name="rmob" Text="جوال المسؤول" HorizontalTextAlignment="End" TextColor="OrangeRed"></Label>
+                    <Entry x:Name="enrespmobile" Placeholder="الجوال" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" Keyboard="Telephone"></Entry>
+                    
+                    <Label x:Name="shopname" Text="اسم الورشة" HorizontalTextAlignment="End" TextColor="OrangeRed"></Label>
+                    <Entry x:Name="enshopname" Placeholder="الاسم" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"></Entry>
+
+                
+                    <Label x:Name="shopcity" Text="المدينة" HorizontalTextAlignment="End" TextColor="OrangeRed"></Label>
+                    <Entry x:Name="enshopcity" Placeholder="كلمة المرور" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"></Entry>
+
+                    <Label Text="معلومات عن الخدمة المقدمة" HorizontalTextAlignment="End" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand"></Label>
+                    <Label Text="اختر خدماتك تباعاً" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"></Label>
+
+                    <ListView x:Name="serviceslist" ItemsSource="services"  ItemTapped="serviceslist_ItemTappedAsync" ItemSelected="serviceslist_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal"  HorizontalOptions="End" >
+                                        <Label x:Name="xlbl" Text="{Binding name}" TextColor="Black"></Label>
+                                      
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <ActivityIndicator x:Name="activityIndicator" IsRunning="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="200" WidthRequest="200" Color="Orange" IsEnabled="True" />
+
+                    <Image x:Name="btnregistshop" Source="registservice" MinimumHeightRequest="25" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped_1"  />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+             
+            </ScrollView>
+        
+                
+        </StackLayout>
+        
+        
+    </ContentPage>
+  
+</TabbedPage>
